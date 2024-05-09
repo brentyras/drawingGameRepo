@@ -1,0 +1,26 @@
+var drawLogo = function(pX,pY,pW,pH)
+{
+    var ratio = pH/12;
+    strokeWeight(1);
+    //tip
+    line(pX + 191*ratio,pY + 260*ratio,pX + 153*ratio,pY + 288*ratio);
+    line(pX + 162*ratio,pY + 245*ratio,pX + 153*ratio,pY + 286*ratio);
+    fill(255, 13, 13);
+    arc(pX + 153*ratio,pY + 289*ratio,pW +  61*ratio,pH + 47*ratio,-77,-39);
+
+    //body
+    line(pX + 162*ratio,pY + 246*ratio,pX + 232*ratio,pY + 119*ratio);
+    line(pX + 190*ratio,pY + 261*ratio,pX + 265*ratio,pY + 134*ratio);
+    line(pX + 188*ratio,pY + 249*ratio,pX + 246*ratio,pY + 142*ratio);
+    line(pX + 175*ratio,pY + 242*ratio,pX + 234*ratio,pY + 137*ratio);
+    //eraser
+    line(pX + 225*ratio,pY + 131*ratio,pX + 257*ratio,pY + 145*ratio);
+    line(pX + 232*ratio,pY + 120*ratio,pX + 264*ratio,pY + 134*ratio);
+    //zigzag
+    line(pX + 162*ratio,pY + 248*ratio,pX + 175*ratio,pY + 243*ratio);
+    line(pX + 175*ratio,pY + 253*ratio,pX + 175*ratio,pY + 243*ratio);
+    line(pX + 175*ratio,pY + 254*ratio,pX + 189*ratio,pY + 248*ratio);
+    line(pX + 189*ratio,pY + 259*ratio,pX + 189*ratio,pY + 248*ratio);
+};
+background(255, 255, 255);
+drawLogo(33,33,0,4);
