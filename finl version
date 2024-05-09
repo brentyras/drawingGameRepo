@@ -1,0 +1,461 @@
+var currentScene;
+//BZ Bitmoji
+var drawBrent = function(bitX, bitY, bitW, bitH)
+{
+    var ratio = bitH / 30;
+//Shirt
+fill(0, 4, 255);
+ellipse(bitX + 199*ratio,bitY + 248*ratio,bitW + 97*ratio,bitH + 126*ratio);
+
+//head
+fill(255, 216, 171);
+ellipse(bitX + 200*ratio,bitY + 175*ratio,bitW + 120*ratio,132*ratio);
+
+//Hair
+fill(0, 0, 0);
+arc(bitX + 231*ratio, bitY + 126*ratio,bitW +  72*ratio,bitH +  64*ratio,-167,49);
+arc(bitX + 170*ratio,bitY + 126*ratio, bitW + 73*ratio,bitH +  64*ratio,-227,-11);
+ellipse(bitX + 141*ratio,bitY + 152*ratio, bitW + 14*ratio,bitH + 48*ratio);
+ellipse(bitX + 258*ratio,bitY + 152*ratio, bitW + 14*ratio,bitH + 48*ratio);
+
+//eyebrow
+fill(255, 0, 0);
+line(bitX + 160*ratio,bitY + 147*ratio,bitX + 187*ratio,bitY + 148*ratio);
+line(bitX + 211*ratio,bitY + 147*ratio,bitX + 239*ratio,bitY + 146*ratio);
+
+//nose
+line(bitX + 203*ratio,bitY + 174*ratio,bitX + 192*ratio,bitY + 192*ratio);
+line(bitX + 209*ratio,bitY + 192*ratio,bitX + 191*ratio,bitY + 192*ratio);
+
+//eyes
+fill(255, 255, 255);
+ellipse(bitX + 176*ratio,bitY + 164*ratio, 30*ratio,19*ratio);
+ellipse(bitX + 226*ratio,bitY + 164*ratio, 30*ratio,19*ratio);
+fill(94, 48, 16);
+noStroke();
+ellipse(bitX + 176*ratio,bitY + 164*ratio,17*ratio,19*ratio);
+ellipse(bitX + 226*ratio,bitY + 164*ratio, 17*ratio,19*ratio);
+
+//iris
+fill(0, 0, 0);
+noStroke();
+ellipse(bitX + 176*ratio,bitY + 164*ratio,5*ratio,5*ratio);
+ellipse(bitX + 226*ratio,bitY + 164*ratio,5*ratio,5*ratio);
+
+//mouth
+stroke(0, 0, 0);
+fill(242, 148, 148);
+arc(bitX + 200*ratio,bitY + 202*ratio,bitW + 67*ratio,bitH + 45*ratio,0,180);
+};
+
+//my BC bitmoji
+var manSize=1/2;
+var y=99;
+var x=503;
+/////body
+var body= function(){
+//shirt;
+fill(173, 57, 57);
+triangle((120+x)*manSize,(412+y)*manSize,(194+x)*manSize,(286+y)*manSize,(266+x)*manSize,(410+y)*manSize);
+//collar;
+triangle((126+x)*manSize,(316+y)*manSize,(266+x)*manSize,(316+y)*manSize,(197+x)*manSize,(344+y)*manSize);
+//graphic;
+fill(0, 0, 0);
+textSize(16*manSize);
+text("BC",(210+x)*manSize,(363+y)*manSize,209*manSize,119*manSize);
+};
+
+var drawHead= function(){
+/////head
+//neck;
+fill(186, 118, 41);
+rect((174+x)*manSize,(295+y)*manSize,40*manSize,50*manSize);
+//skin;
+fill(0, 0, 0);
+ellipse((191+x)*manSize,(217+y)*manSize,104*manSize,127*manSize);
+//ears;
+fill(186, 118, 41);
+ellipse((249+x)*manSize,(252+y)*manSize,25*manSize,45*manSize);
+ellipse((132+x)*manSize,(252+y)*manSize,20*manSize,51*manSize);
+//head;
+ellipse((193+x)*manSize,(255+y)*manSize,100*manSize,146*manSize);
+//eyes
+fill(176, 61, 61);
+ellipse((169+x)*manSize,(250+y)*manSize,11*manSize,40*manSize);
+ellipse((210+x)*manSize,(251+y)*manSize,11*manSize,40*manSize);
+//eyebrows;
+fill(89, 53, 15);
+rect((188+x)*manSize,(221+y)*manSize,52*manSize,15*manSize);
+rect((146+x)*manSize,(221+y)*manSize,40*manSize,15*manSize);
+fill(186, 118, 41);
+arc((181+x)*manSize,(309+y)*manSize,76*manSize,52*manSize,-114,-36);
+//braids;
+fill(0, 0, 0);
+rect((152+x)*manSize,(179+y)*manSize,80*manSize,15*manSize);
+ellipse((178+x)*manSize,(205+y)*manSize,10*manSize,94*manSize);
+ellipse((216+x)*manSize,(208+y)*manSize,10*manSize,81*manSize);
+ellipse((156+x)*manSize,(224+y)*manSize,6*manSize,81*manSize);
+ellipse((232+x)*manSize,(220+y)*manSize,6*manSize,81*manSize);
+ellipse((140+x)*manSize,(260+y)*manSize,6*manSize,81*manSize);
+ellipse((244+x)*manSize,(264+y)*manSize,6*manSize,81*manSize);
+};
+var drawLogo = function(pX,pY,pW,pH)
+{
+    var ratio = pH/12;
+    strokeWeight(1);
+    //tip
+    line(pX + 191*ratio,pY + 260*ratio,pX + 153*ratio,pY + 288*ratio);
+    line(pX + 162*ratio,pY + 245*ratio,pX + 153*ratio,pY + 286*ratio);
+    fill(0, 217, 255);
+    arc(pX + 153*ratio,pY + 289*ratio,pW +  61*ratio,pH + 47*ratio,-77,-39);
+
+    //body
+    line(pX + 162*ratio,pY + 246*ratio,pX + 232*ratio,pY + 119*ratio);
+    line(pX + 190*ratio,pY + 261*ratio,pX + 265*ratio,pY + 134*ratio);
+    line(pX + 188*ratio,pY + 249*ratio,pX + 246*ratio,pY + 142*ratio);
+    line(pX + 175*ratio,pY + 242*ratio,pX + 234*ratio,pY + 137*ratio);
+    //eraser
+    line(pX + 225*ratio,pY + 131*ratio,pX + 257*ratio,pY + 145*ratio);
+    line(pX + 232*ratio,pY + 120*ratio,pX + 264*ratio,pY + 134*ratio);
+    //zigzag
+    line(pX + 162*ratio,pY + 248*ratio,pX + 175*ratio,pY + 243*ratio);
+    line(pX + 175*ratio,pY + 253*ratio,pX + 175*ratio,pY + 243*ratio);
+    line(pX + 175*ratio,pY + 254*ratio,pX + 189*ratio,pY + 248*ratio);
+    line(pX + 189*ratio,pY + 259*ratio,pX + 189*ratio,pY + 248*ratio);
+};
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 150;
+    this.height = config.height || 50;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+var drawScreen2 = function()//Draw Screen
+{
+    currentScene = 2;// Second Splashscreen
+    if(currentScene === 2)
+    {
+    draw = function() 
+        {
+        var bSize=1;
+        //Size1=1
+        //Size2=3;
+        //Size3=5;
+        //Size4=7;
+        //Size5=10;
+        var r=0;
+        var b=0;
+        var g=0;     
+        background(255, 255, 247);
+        stroke(173, 222, 237);
+        for(var i=0;i < 20;i++)
+        {
+            var lineY = 20 + (i * 20);
+            line(0, lineY, 400, lineY);
+        }
+        noStroke();
+        fill(191, 87, 34);
+        rect(25,0,2,400);
+        stroke(38, 34, 32);
+        //header box
+        fill(227, 223, 209);
+        rect(-2,-1,447,80);
+            //divider
+                rect(104,-1,127,80);
+            //tools
+                //1st box pencil
+                rect(15,13,33,33);
+                    //icon
+                    rect(24,19,4,7);
+                    rect(28,20,7,6);
+                    rect(23,26,13,4);
+                    rect(26,36,7,4);
+                    line(28,31,27,37);
+                    line(32,31,33,37);
+                //2nd box eraser
+                rect(57,13,33,33);
+                //eraser left57right90top13bottom46
+                    //icon
+                    rect(66,20,14,19);
+                    rect(66,27,14,13);
+                //text
+                fill(0, 0, 0);
+                textSize(20);
+                text("Tools",27,54,100,100);
+                
+                //brush size
+                fill(255, 255, 255);
+                rect(142,17,83,25);
+                rect(162,50,63,19);
+                    fill(0, 0, 0);
+                        //"size" word
+                        textSize(16);
+                        text("Size",107,22,96,108);
+                        
+                        //"colors" word
+                        textSize(16);
+                        text("Colors",291,62,103,108);
+                
+                        fill(255, 255, 255);
+            //colors
+            var colorY=20;
+                //palette
+                rect(246,17,139,40);
+                    //color squares(first row)
+                    fill(0, 0, 0);//black square
+                    rect(251,20,12,14);
+                    fill(255, 0, 0);//red square  
+                    rect(275,20,12,14);
+                    fill(255, 98, 0);//orange square  
+                    rect(301,20,12,14);
+                    fill(251, 255, 0);//yellow square  
+                    rect(327,20,12,14);
+                    fill(200, 255, 0);//green square  
+                    rect(354,20,12,14);
+                //color squares(second row) 
+                    fill(0, 255, 98);//real green square 
+                    rect(251,40,12,14);
+                    fill(102, 208, 232);//blue square  
+                    rect(275,40,12,14);
+                    fill(44, 20, 255);//darkblue square   
+                    rect(301,40,12,14);
+                    fill(136, 0, 255);//purple square   
+                    rect(327,40,12,14);
+                    fill(255, 0, 251);//pink square   
+                    rect(354,40,12,14);        
+            var sizeWindow=function()
+            {
+                fill(237, 233, 225);
+                rect(142,6,83,73);
+                fill(8, 8, 8);
+                rect(146,19,76,0);
+                rect(146,28,76,1);
+                rect(146,37,76,2);
+                rect(146,49,76,4);
+                rect(146,65,76,7);
+            };
+        
+        
+            var brushWindow=function()
+            {
+                fill(230, 228, 216);
+                rect(4,45,74,34);
+                fill(0, 0, 0);
+                rect(10,54,4,4);
+                rect(5,65,73,0);
+                text("pencil",18,50,53,20);
+            };
+            //brushbotton top65bottom79left4right78
+            //pencilbutton top45bottom65left4right78
+            //first redsquare
+        
+        
+        
+            draw= function() 
+            {
+                //standard active brush loop
+                if(mouseIsPressed&&mouseX<400&&mouseX>0&&mouseY<400&&mouseY>80)
+                {
+                    noStroke();
+                    fill(r, b, g);
+                    ellipse(mouseX,mouseY,bSize,bSize);
+                } 
+        
+                //brushloop (maybe this works test it)
+                if(mouseIsPressed&&mouseX<78&&mouseX>4&&mouseY<79&&mouseY>65)
+                {
+                    while(mouseIsPressed&&mouseX<400&&mouseX>0&&mouseY<400&&mouseY>80)
+                    {
+                        noStroke();
+                        fill(r, b, g);
+                        rect(mouseX,mouseY,bSize,bSize);
+                    }  
+                    
+                }
+            
+                //brush window appears loop
+                if(mouseX<231&&mouseX>104&&mouseY<80&&mouseY>0)
+                {
+                    stroke(0, 0, 0);
+                    sizeWindow();
+                }//done
+        
+                //brush options loop
+                if(mouseX<104&&mouseX>0&&mouseY<79&&mouseY>46||mouseX<48&&mouseX>15&&mouseY<46&&mouseY>13)
+                {
+                    stroke(0, 0, 0);
+                    brushWindow();
+                }//done
+                //eraserbuttonloop
+                if(mouseIsPressed&&mouseX<90&&mouseX>57&&mouseY<46&&mouseY>13)
+                {r=255;
+                b=255;
+                g=255;
+                }
+        
+                //lineweight 1
+                if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<21&&mouseY>12)
+                {
+                    bSize=1;
+                }
+                //lineweight 2
+                if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<33&&mouseY>24)
+                {
+                    bSize=3;
+                } 
+                //lineweight 3
+                if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<45&&mouseY>36)
+                {
+                    bSize=5;
+                    
+                } 
+                //lineweight 4
+                if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<57&&mouseY>48)
+                {
+                    bSize=7;
+                } 
+                //lineweight 5
+                if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<74&&mouseY>60)
+                {
+                    bSize=10;
+                }
+                            
+                //colors
+                    //blacksquare
+                    if(mouseIsPressed&&mouseX>251&&mouseX<263&&mouseY>20&&mouseY<34)
+                    {
+                        r=0 ;
+                        b=0 ;
+                        g=0 ;
+                    } 
+                    //red square  
+                    if(mouseIsPressed&&mouseX>275&&mouseX<287&&mouseY>20&&mouseY<34)
+                    {
+                        r=255 ;
+                        b=0 ;
+                        g=0 ;
+                    } 
+                    //orange square  
+                    if(mouseIsPressed&&mouseX>301&&mouseX<313&&mouseY>20&&mouseY<34)
+                    {
+                        r=255 ;
+                        b=98 ;
+                        g=0 ;
+                    } 
+                    //yellow square  
+                    if(mouseIsPressed&&mouseX>327&&mouseX<339&&mouseY>20&&mouseY<34)
+                    {
+                        r=251 ;
+                        b=255 ;
+                        g=0 ;
+                    }
+                    //green square  
+                    if(mouseIsPressed&&mouseX>354&&mouseX<366&&mouseY>20&&mouseY<34)
+                {
+                    r=200 ;
+                    b=255 ;
+                    g=0 ;
+                }
+                //(second row) 
+                //real green square 
+                if(mouseIsPressed&&mouseX>251&&mouseX<263&&mouseY>40&&mouseY<54)
+                {
+                    r=0 ;
+                    b=255 ;
+                    g=98 ;
+                } 
+                //blue square  
+                if(mouseIsPressed&&mouseX>275&&mouseX<287&&mouseY>40&&mouseY<54)
+                {
+                    r=102 ;
+                    b=208 ;
+                    g=232 ;
+                } 
+                //darkblue square   
+                if(mouseIsPressed&&mouseX>301&&mouseX<313&&mouseY>40&&mouseY<54)
+                {
+                    r=44 ;
+                    b=20 ;
+                    g=255 ;
+                }
+                //purple square   
+                if(mouseIsPressed&&mouseX>327&&mouseX<339&&mouseY>40&&mouseY<54)
+                {
+                    r=136 ;
+                    b=0 ;
+                    g=255 ;
+                }
+                //pink square   
+                if(mouseIsPressed&&mouseX>354&&mouseX<366&&mouseY>40&&mouseY<54)
+                {
+                    r=255 ;
+                    b=0 ;
+                    g=251 ;
+                }
+            };
+        };
+    }
+};
+
+var drawButton = function()
+{
+    fill(30, 204, 192);
+    rect(123,278,157,49);
+    fill(247, 30, 30);
+    textSize(39);
+    text("Start", 159, 315);
+    noFill();
+};//Start Button
+
+var screen1 = function()//Initial Screen
+{
+    currentScene = 1;
+    if(currentScene === 1)
+    {
+        fill(255, 230, 0);
+        background(151, 101, 252);
+        textSize(46);
+        text("DigiDraw",110,39,293,155);
+        textSize(15);
+        text("Brent Campbell & Brent Zhang, CSC 106",55,352,320,197);
+        drawBrent(-53,84,0, 16);
+        body();
+        drawHead();
+        noFill();
+        stroke(0, 255, 187);
+        ellipse(203,189,200,102);
+        noFill();
+        stroke(151, 101, 252);
+        strokeWeight(4);
+        arc(210,148,73,20,-97,-43);
+        stroke(0, 0, 0);
+        drawLogo(36,-6,0,10);
+        drawButton();
+    }
+};
+mouseClicked = function()
+{
+   if(mouseX >= 123 && mouseX <= 280 && mouseY >= 278 && mouseY <= 327)
+    {
+       if(currentScene === 1)
+       {
+           drawScreen2();
+       }
+    }//the Start button function
+};
+screen1();
+
