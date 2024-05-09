@@ -1,0 +1,100 @@
+
+//loop for color palette
+//blacksquare
+fill(0, 0, 0);
+              rect(251,20,12,14);
+//redsquare
+fill(255, 0, 0);
+              rect(275,20,12,14);
+//orangesquare
+fill(255, 98, 0); 
+              rect(301,20,12,14);
+//yellow
+fill(251, 255, 0); 
+              rect(327,20,12,14);
+//yellowgreen
+fill(200, 255, 0);  
+              rect(354,20,12,14);
+//green
+fill(0, 255, 98);//real green square 
+              rect(251,40,12,14);
+//greenblue
+fill(102, 208, 232);//blue square  
+              rect(275,40,12,14);
+//blue
+fill(44, 20, 255);//darkblue square   
+              rect(301,40,12,14);
+//purple
+fill(136, 0, 255);//purple square   
+              rect(327,40,12,14);
+//pink
+fill(255, 0, 251);//pink square   
+              rect(354,40,12,14);
+                          var testr=function(){fill(0, 0, 0);rect(50,50,71,50);};
+
+//button loops
+//button loops
+//button loops
+
+          //color squares(first row)
+            fill(0, 0, 0);//black square
+              rect(251,20,12,14);
+              //clickloop
+              draw= function() {
+var bSize=1;
+//Size1=1
+//Size2=3;
+//Size3=5;
+//Size4=7;
+//Size5=10;
+var r=0;
+var b=0;
+var g=0; 
+
+//hoverloops              
+             //brush window appears loop
+            if(mouseX<231&&mouseX>104&&mouseY<80&&mouseY>0){fill(0, 0, 0);rect(200,200,40,40);} 
+            //brush options appear loop
+            if(mouseX<104&&mouseX>0&&mouseY<79&&mouseY>46||mouseX<48&&mouseX>15&&mouseY<46&&mouseY>13){fill(0, 0, 0);rect(300,200,60,40);}
+                  
+//button loops
+//color button loops
+            //blacksquare
+              if(mouseIsPressed&&mouseX>251&&mouseX<263&&mouseY>20&&mouseY<34){r=0 ;b=0 ;g=0 ;} 
+            //red square  
+              if(mouseIsPressed&&mouseX>275&&mouseX<287&&mouseY>20&&mouseY<34){r=255 ;b=0 ;g=0 ;} 
+            //orange square  
+              if(mouseIsPressed&&mouseX>301&&mouseX<313&&mouseY>20&&mouseY<34){r=255 ;b=98 ;g=0 ;} 
+            //yellow square  
+              if(mouseIsPressed&&mouseX>327&&mouseX<339&&mouseY>20&&mouseY<34){r=251 ;b=255 ;g=0 ;}
+            //green square  
+              if(mouseIsPressed&&mouseX>354&&mouseX<366&&mouseY>20&&mouseY<34){r=200 ;b=255 ;g=0 ;}
+            //(second row) //real green square 
+              if(mouseIsPressed&&mouseX>251&&mouseX<263&&mouseY>40&&mouseY<54){r=0 ;b=255 ;g=98 ;} 
+            //blue square  
+              if(mouseIsPressed&&mouseX>275&&mouseX<287&&mouseY>40&&mouseY<54){r=102 ;b=208 ;g=232 ;} 
+            //darkblue square   
+              if(mouseIsPressed&&mouseX>301&&mouseX<313&&mouseY>40&&mouseY<54){r=44 ;b=20 ;g=255 ;}
+            //purple square   
+              if(mouseIsPressed&&mouseX>327&&mouseX<339&&mouseY>40&&mouseY<54){r=136 ;b=0 ;g=255 ;}
+            //pink square   
+              if(mouseIsPressed&&mouseX>354&&mouseX<366&&mouseY>40&&mouseY<54){r=255 ;b=0 ;g=251 ;} 
+//lineweight button loops
+            //top/1stweight    
+            if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<21&&mouseY>12){rect(200,388,40,40);}    
+            //2ndweight  
+            if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<33&&mouseY>24){rect(200,388,40,40);} 
+            //3rdweight  
+            if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<45&&mouseY>36){rect(200,388,40,40);} 
+            //4thweight  
+            if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<57&&mouseY>48){rect(200,388,40,40);} //lastweight  
+            if(mouseIsPressed&&mouseX<222&&mouseX>146&&mouseY<74&&mouseY>60){rect(200,388,40,40);} 
+//brushtype button loops 
+//pencil(brushtype)buttonloop
+if(mouseIsPressed&&mouseX<78&&mouseX>4&&mouseY<65&&mouseY>45){fill(0, 0, 0);rect(89,200,40,40);}
+//brush(brushtype)buttonloop
+if(mouseIsPressed&&mouseX<78&&mouseX>4&&mouseY<79&&mouseY>65){fill(0, 0, 0);rect(89,200,40,40);}
+//eraserbutton loop
+if(mouseIsPressed&&mouseX<90&&mouseX>57&&mouseY<46&&mouseY>13){fill(0, 0, 0);rect(330,200,40,40);}
+ };
+
